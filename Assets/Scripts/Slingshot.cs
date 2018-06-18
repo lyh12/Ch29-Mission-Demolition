@@ -13,6 +13,7 @@ public class Slingshot : MonoBehaviour {
 	public Vector3 launchPos;
 	public GameObject projectile;
 	public bool aimingMode;
+
 	private Rigidbody projectileRigidbody;
 
 
@@ -47,6 +48,7 @@ public class Slingshot : MonoBehaviour {
 
 	void Update() {
 		if (!aimingMode) return;
+
 		Vector3 mousePos2D = Input.mousePosition;
 
 		mousePos2D.z = -Camera.main.transform.position.z;
@@ -68,6 +70,7 @@ public class Slingshot : MonoBehaviour {
 			aimingMode = false;
 			projectileRigidbody.isKinematic = false;
 			projectileRigidbody.velocity = -mouseDelta * velocityMult;
+			FollowCam.POI = projectile;
 			projectile = null;
 		}
 	}
