@@ -25,12 +25,13 @@ public class CloudCrafter : MonoBehaviour {
 			cPos.y = Random.Range (cloudPosMin.y, cloudPosMax.y);
 
 			float scaleU = Random.value;
-			float scaleVa1 = Mathf.Lerp (cloudScaleMin, cloudScaleMax, scaleU);
+			float scaleVal = Mathf.Lerp (cloudScaleMin, cloudScaleMax, scaleU);
 
 			cPos.y = Mathf.Lerp (cloudPosMin.y, cPos.y, scaleU);
 			cPos.z = 100 - 90 * scaleU;
 
 			cloud.transform.position = cPos;
+			cloud.transform.localScale = Vector3.one * scaleVal;
 			cloud.transform.SetParent (anchor.transform);
 			cloudInstances [i] = cloud;
 		}
