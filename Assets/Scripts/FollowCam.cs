@@ -38,7 +38,7 @@ public class FollowCam : MonoBehaviour {
 		} 
 
 		destination.x = Mathf.Max (minXY.x, destination.x);
-		destination.y = Mathf.Max (minXY.y, destination.x);
+		destination.y = Mathf.Max (minXY.y, destination.y);
 
 		destination = Vector3.Lerp (transform.position, destination, easing);
 		destination.z = camZ;
